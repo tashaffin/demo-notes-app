@@ -2,7 +2,7 @@ export async function handler(event) {
   return {
     statusCode: 200,
     headers: { "Content-Type": "text/html" },
-    body: `im not cody Your request was received at ${event.requestContext.time}.\n` +
+    body: `im not cody - and neither am I - Your request was received at ${event.requestContext.time}.\n` +
 
     displayProperties(event)
   };
