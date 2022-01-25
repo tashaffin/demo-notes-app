@@ -1,14 +1,12 @@
-export async function handler(event) {
+export async function handler() {
 	return {
-	  statusCode: 200,
-	  headers: { "Content-Type": "text/html" },
-	  body: Hello, World! Cody made this change. Your request was received at ${event.requestContext.time}.\n +
-	  displayProperties(event)
+		statusCode: 200,
+		headers: { "Content-Type": "text/html" },
+		body: "<html><pre>           _<br>" +
+"          | |<br>" + 
+" ___  __ _| |_ __ _ _ __<br>" +
+"/ __|/ _` | __/ _` | '_ \\<br>" + 
+"\\__ \\ (_| | || (_| | | | |<br>" +
+"|___/\\__,_|\\__\\__,_|_| |_|<br></pre></html>"
 	};
-  }
-  
-  function displayProperties(o) {
-	return '<ul>' +
-	(typeof(o) != 'object' ? o : Object.getOwnPropertyNames(o).map(p => '<li>' + p + displayProperties(o[p]) + '</li>').join('')) +
-	'</ul>';
-  }
+}
