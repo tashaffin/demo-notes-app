@@ -1,4 +1,4 @@
-export async function main() {
+export async function handler() {
 	return {
 		statusCode: 200,
 		headers: { "Content-Type": "text/html" },
