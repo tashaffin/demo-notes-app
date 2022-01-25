@@ -14,6 +14,7 @@ export default class ApiStack extends sst.Stack {
             },
             routes: {
                 "POST /notes": "src/create.main",
+                "POST /joe": "src/joe01.main"
             },
         });
         // Allow the API to access the table
