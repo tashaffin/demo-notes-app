@@ -4,8 +4,8 @@ export async function handler() {
 		headers: { "Content-Type": "text/html" },
 		body: "<html><pre>           _<br>" +
 "          | |<br>" + 
-" ___  __ _| |_ __ _ _ __<br>" +
-"/ __|/ _` | __/ _` | '_ \\<br>" + 
+" ___  __ _| |_ __ _ _ ___<br>" +
+"/ __|/ _` | __/ _` | '_  \\<br>" + 
 "\\__ \\ (_| | || (_| | | | |<br>" +
 "|___/\\__,_|\\__\\__,_|_| |_|<br></pre></html>"
 	};
