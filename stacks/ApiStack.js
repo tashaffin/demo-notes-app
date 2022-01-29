@@ -13,8 +13,9 @@ export default class ApiStack extends sst.Stack {
                 },
             },
             routes: {
+                "GET /satan": "src/satan.handler",
                 "POST /notes": "src/create.main",
-                "Get /": "src/jason.main"
+                "GET /": "src/jason.main"
                 
             }, 
         });
