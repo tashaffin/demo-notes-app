@@ -10,3 +10,4 @@ export async function handler() {
 "|___/\\__,_|\\__\\__,_|_| |_|<br></pre></html>"
 	};
 }
+

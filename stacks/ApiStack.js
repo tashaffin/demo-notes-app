@@ -14,14 +14,15 @@ export default class ApiStack extends sst.Stack {
             },
             routes: {
                 "POST /notes": "src/create.main",
-                "GET /satan": "src/satan.handler"
-            },
+                "Get /": "src/jason.main"
+                
+            }, 
         });
         // Allow the API to access the table
         this.api.attachPermissions([table]);
         // Show the API endpoint in the output
         this.addOutputs({
-            ApiEndpoint: this.api.url,
+            ApiEndpoint: this.api.url, 
         });
     }
 }

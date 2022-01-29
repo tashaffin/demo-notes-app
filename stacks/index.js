@@ -7,3 +7,4 @@ export default function main(app) {
 		table: storageStack.table,
 	});
 }
+
