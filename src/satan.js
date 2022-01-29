@@ -7,7 +7,7 @@ export async function handler() {
 " ___  __ _| |_ __ _ _ ___<br>" +
 "/ __|/ _` | __/ _` | '_  \\<br>" + 
 "\\__ \\ (_| | || (_| | | | |<br>" +
-"|___/\\__,_|\\__\\__,_|_| |_|<br>\m/ HAIL SATAN \m/</pre></html>"
+"|___/\\__,_|\\__\\__,_|_| |_|<br>\m/ HAIL SATAN TWICE AS HARD \m/</pre></html>"
 	};
 }
 
