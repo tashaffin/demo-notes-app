@@ -10,4 +10,3 @@ export async function handler() {
 "|___/\\__,_|\\__\\__,_|_| |_|<br>\\m/ HAIL SATAN TWICE AS HARD \\m/</pre></html>"
 	};
 }
-
