@@ -19,7 +19,7 @@ export async function main(event) {
         await dynamoDb.put(params).promise();
         return {
             statusCode: 200,
-            body: JSON.stringify(`Hello ${userId}, you have been heard. Your note id is ${noteId}`),
+            body: JSON.stringify(`Hello ${userId}, you have been heard. Your note id is ${noteId}. Hi again.`),
         };
     } catch (e) {
         return {
