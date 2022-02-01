@@ -18,7 +18,8 @@ export default class ApiStack extends sst.Stack {
                 "GET /notes/{id}": "src/get.main",
                 "GET /": "src/jason.main",
                 "GET /notes": "src/list.main",
-                "PUT /notes/{id}": "src/update.main"
+                "PUT /notes/{id}": "src/update.main",
+                "DELETE /notes/{id}": "src/delete.main"
             }, 
         });
         // Allow the API to access the table
