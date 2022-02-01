@@ -24,8 +24,7 @@ export default class AuthStack extends sst.Stack {
 				actions: ["s3:*"],
 				effect: iam.Effect.ALLOW,
 				resources: [
-					bucket.bucketArn +
-					"/private/${cognito-identity.amazonaws.com:sub}/*",↪
+					bucket.bucketArn + "/private/${cognito-identity.amazonaws.com:sub}/*",
 				],
 			}),
 		]);
