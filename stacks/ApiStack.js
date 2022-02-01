@@ -1,4 +1,5 @@
 import * as sst from "@serverless-stack/resources";
+
 export default class ApiStack extends sst.Stack {
     // Public reference to the API
     api;
