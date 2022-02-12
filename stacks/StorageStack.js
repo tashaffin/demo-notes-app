@@ -8,7 +8,19 @@ export default class StorageStack extends sst.Stack {
     constructor(scope, id, props) {
         super(scope, id, props);
         // Create the DynamoDB table
-        this.bucket = new sst.Bucket(this, "Uploads");
+        this.bucket = new sst.Bucket(this, "Uploads", {
+            s3Bucket: {
+                // Allow client side access to the bucket from a different domain
+                cors: [
+                    {
+                        maxAge: 3000,
+                        allowedOrigins: ["*"],
+                        allowedHeaders: ["*"],
+                        allowedMethods: ["GET", "PUT", "POST", "DELETE", "HEAD"],
+                    },
+                ],
+            },
+        });
         this.table = new sst.Table(this, "Notes", {
             fields: {
                 userId: sst.TableFieldType.STRING,
