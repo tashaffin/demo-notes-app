@@ -3,8 +3,10 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./Login.css";
 import { Auth } from "aws-amplify";
+import { useAppContext } from "../lib/contextLib";
 
 export default function Login() {
+	const { userHasAuthenticated } = useAppContext();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	function validateForm() {
@@ -16,7 +18,7 @@ export default function Login() {
 
 		try {
 			await Auth.signIn(email, password);
-			alert("Logged in");
+			userHasAuthenticated(true);
 		} catch (e) {
 			alert(e.message);
 		}
@@ -25,7 +27,7 @@ export default function Login() {
 	return (
 		<div className="Login">
 			<Form onSubmit={handleSubmit}>
-				<Form.Group size="lg" controlId="email">
+				<Form.Group size="lg" ControlId="email">
 					<Form.Label>Email</Form.Label>
 					<Form.Control
 						autoFocus
@@ -34,7 +36,7 @@ export default function Login() {
 						onChange={(e) => setEmail(e.target.value)}
 					/>
 				</Form.Group>
-				<Form.Group size="lg" controlId="password">
+				<Form.Group size="lg" ControlId="password">
 					<Form.Label>Password</Form.Label>
 					<Form.Control
 						type="password"
