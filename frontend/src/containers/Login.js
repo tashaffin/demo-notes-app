@@ -5,6 +5,7 @@ import "./Login.css";
 import { Auth } from "aws-amplify";
 import { useAppContext } from "../lib/contextLib";
 import { useHistory } from "react-router-dom";
+import { onError } from "../lib/errorLib";
 
 export default function Login() {
 	const { userHasAuthenticated } = useAppContext();
@@ -25,7 +26,7 @@ export default function Login() {
 			userHasAuthenticated(true);
 			history.push("/");
 		} catch (e) {
-			alert(e.message);
+			onError(e);
 			setIsLoading(false);
 		}
 	}
