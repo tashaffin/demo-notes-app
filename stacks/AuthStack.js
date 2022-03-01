@@ -6,7 +6,7 @@ export default class AuthStack extends sst.Stack {
 	auth;
 	constructor(scope, id, props) {
 		super(scope, id, props);
-		const { api, bucket } = props;
+		const { altApi, api, bucket } = props;
 		// Create a Cognito User Pool and Identity Pool
 		this.auth = new sst.Auth(this, "Auth", {
 			cognito: {
@@ -17,6 +17,7 @@ export default class AuthStack extends sst.Stack {
 			},
 		});
 		this.auth.attachPermissionsForAuthUsers([
+//			altApi,
 			// Allow access to the API
 			api,
 			// Policy granting access to a specific folder in the bucket

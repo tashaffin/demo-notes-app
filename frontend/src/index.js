@@ -27,6 +27,11 @@ Amplify.configure({
         endpoint: config.apiGateway.URL,
         region: config.apiGateway.REGION
       },
+      {
+        name: "joesCrap",
+        endpoint: config.altApiGateway.URL,
+        region: config.apiGateway.REGION
+      },
     ]
   }
 });

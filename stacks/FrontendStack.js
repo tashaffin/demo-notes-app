@@ -3,12 +3,13 @@ import * as sst from "@serverless-stack/resources";
 export default class FrontendStack extends sst.Stack {
 	constructor(scope, id, props) {
 		super(scope, id, props);
-		const { api, auth, bucket } = props;
+		const { altApi, api, auth, bucket } = props;
 		// Define our React app
 		const site = new sst.ReactStaticSite(this, "ReactSite", {
 			path: "frontend",
 			// Pass in our environment variables
 			environment: {
+				REACT_APP_ALT_API_URL: altApi.url,
 				REACT_APP_API_URL: api.url,
 				REACT_APP_REGION: scope.region,
 				REACT_APP_BUCKET: bucket.bucketName,
