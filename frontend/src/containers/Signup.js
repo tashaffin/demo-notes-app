@@ -6,7 +6,7 @@ import { useAppContext } from "../lib/contextLib";
 import { useFormFields } from "../lib/hooksLib";
 import { onError } from "../lib/errorLib";
 import "./Signup.css";
-import { Auth } from "aws-amplify";
+import { Auth, UsernameExistsException } from "aws-amplify";
 
 export default function Signup() {
 	const [fields, handleFieldChange] = useFormFields({
@@ -23,7 +23,7 @@ export default function Signup() {
 	function validateForm() {
 		return (
 			fields.email.length > 0 &&
-			fields.password.length > 8 &&
+			fields.password.length > 0 &&
 			fields.password === fields.confirmPassword
 		);
 	}
@@ -40,10 +40,18 @@ export default function Signup() {
 				username: fields.email,
 				password: fields.password,
 			});
-			setIsLoading(false);
 			setNewUser(newUser);
 		} catch (e) {
-			onError(e);
+			if (e.code === 'UsernameExistsException') {
+				Auth.resendSignUp(fields.email).then(
+					() => setNewUser({
+						username: fields.email,
+						password: fields.password,
+					})
+				);
+			} else
+				onError(e);
+		} finally {
 			setIsLoading(false);
 		}
 	}
