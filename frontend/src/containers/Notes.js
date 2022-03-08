@@ -83,6 +83,10 @@ export default function Notes() {
 		}
 	}
 
+	function deleteNote() {
+		return API.del("notes", `/notes/${id}`);
+	}
+	
 	async function handleDelete(event) {
 		event.preventDefault();
 		const confirmed = window.confirm(
@@ -91,9 +95,17 @@ export default function Notes() {
 		if (!confirmed) {
 			return;
 		}
+
 		setIsDeleting(true);
+		try {
+			await deleteNote();
+			history.push("/");
+		} catch (e) {
+			onError(e);
+			setIsDeleting(false);
+		}
 	}
-	
+
 	return (
 		<div className="Notes">
 			{note && (
