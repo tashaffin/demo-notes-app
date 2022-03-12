@@ -20,6 +20,9 @@ export default function Routes() {
 			<Route exact path="/signup">
 				<Signup />
 			</Route>
+			<Route exact path="/settings">
+				<Settings />
+			</Route>
 			<Route exact path="/notes/new">
 				<NewNote />
 			</Route>
