@@ -53,6 +53,12 @@ function App() {
                 <>
                   <LinkContainer to="/settings">
                     <Nav.Link>Settings</Nav.Link>
+<<<<<<< HEAD
+=======
+                  </LinkContainer>
+                  <LinkContainer to="/satan">
+                    <Nav.Link>Hail</Nav.Link>
+>>>>>>> 969ff3a11403c4f03eca5410cebff014b80a3d25
                   </LinkContainer>
                   <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
                 </>
