@@ -7,6 +7,7 @@ import Signup from "./containers/Signup";
 import NewNote from "./containers/NewNote";
 import Notes from "./containers/Notes";
 import Satan from "./containers/Satan";
+import Settings from "./containers/Settings";
 
 export default function Routes() {
 	return (
