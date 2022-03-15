@@ -46,6 +46,9 @@ function App() {
               Scratch
             </Navbar.Brand>
           </LinkContainer>
+          <LinkContainer to="/satan">
+                <Nav.Link className="font-weight-bold text-muted">Hail</Nav.Link>
+              </LinkContainer>
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
             <Nav activeKey={window.location.pathname}>
@@ -53,9 +56,6 @@ function App() {
                 <>
                   <LinkContainer to="/settings">
                     <Nav.Link>Settings</Nav.Link>
-                  </LinkContainer>
-                  <LinkContainer to="/satan">
-                    <Nav.Link>Hail</Nav.Link>
                   </LinkContainer>
                   <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
                 </>
