@@ -19,6 +19,8 @@
   },
   "dependencies": {
     "@aws-cdk/core": "1.132.0",
+    "@sentry/react": "^6.19.2",
+    "@sentry/tracing": "^6.19.2",
     "@serverless-stack/cli": "0.56.0",
     "@serverless-stack/resources": "0.56.0",
     "aws-sdk": "^2.1062.0",
